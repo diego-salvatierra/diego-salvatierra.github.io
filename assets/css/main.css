@@ -2866,7 +2866,7 @@
 			}
 
 			.tiles article:nth-child(6n - 3):before {
-				background-color: #ec8d81;
+				background-color: #87c5a4;
 			}
 
 			.tiles article:nth-child(6n - 2):before {
@@ -2878,7 +2878,7 @@
 			}
 
 			.tiles article:nth-child(6n):before {
-				background-color: #87c5a4;
+				background-color: #ec8d81;
 			}
 
 		@media screen and (max-width: 1280px) {
