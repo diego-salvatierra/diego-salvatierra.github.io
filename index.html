@@ -1,220 +1,652 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Diego Salvatierra</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diego Salvatierra</title>
+<meta name="description" content="Diego Salvatierra, AI product manager and educator. AI products at Common Sense Media, school connectivity in Chile, teaching in China, and startups in California." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #319cff;
+    --navy: #0b2d5c;
+    --ink: #13233a;
+    --sky: #37b8e2;
+    --teal: #37818a;
+    --yellow: #ffcc31;
+    --red: #e8423f;
+    --ice: #e8f8ff;
+    --cream: #fff8e1;
+    --paper: #ffffff;
+    --muted: #5a6a80;
+    --line: #dbe6f2;
+    --slab: "Roboto Slab", Georgia, serif;
+    --sans: "Lexend", system-ui, sans-serif;
+    --wrap: 1180px;
+    --shadow: 0 1px 2px rgba(11,45,92,.08), 0 18px 40px -18px rgba(11,45,92,.35);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 300 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  figure { margin: 0; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  /* nav + hero */
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 26px 0; }
+  .logo { font: 600 26px/1 var(--slab); color: #fff; text-decoration: none; }
+  .nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+  .nav ul a { color: #fff; text-decoration: none; font-weight: 400; font-size: 15px; }
+  .nav ul a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .nav ul a.navpill { background: var(--yellow); color: var(--navy); font-weight: 600; padding: 9px 16px; border-radius: 999px; }
+  .nav ul a.navpill:hover { text-decoration: none; }
+  .nav ul { align-items: center; }
+  .logos .snapmark { display: flex; align-items: center; gap: 8px; }
+  .logos .snapmark .ghost { height: 22px; opacity: .45; border-radius: 5px; }
+  .hero { background: var(--blue); color: var(--navy); padding-bottom: 80px; }
+  .hero h1 { font: 600 clamp(54px, 10vw, 150px)/.92 var(--sans); letter-spacing: -.04em; margin: 64px 0 40px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 56px; align-items: center; }
+  .hero-portrait { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; border: 6px solid rgba(255,255,255,.35); }
+  .hero h1.words { font-size: clamp(42px, 5.4vw, 82px); line-height: 1; margin: 28px 0 28px; }
+  .hero h1.words span { display: inline-block; transition: color .25s ease; cursor: default; }
+  .hero h1.words span:hover { color: #fff; }
+  @media (prefers-reduced-motion: reduce) { .hero h1.words span { transition: none; } }
+  .hero .lede { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: #fff; max-width: 52ch; margin: 0 0 26px; font-weight: 400; }
+  .pill { display: inline-block; background: var(--yellow); color: var(--navy); font: 600 14px/1 var(--sans); letter-spacing: .04em; text-transform: uppercase; padding: 15px 26px; border-radius: 999px; text-decoration: none; transition: transform .15s ease; }
+  .pill:hover { transform: translateY(-2px); }
+  .pill.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.7); }
+  .actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Diego</strong> <span>Salvatierra</span></a>
-						<!--<nav>
-							<a href="#menu">Menu</a>
-						</nav> -->
-					</header>
+  /* logo row */
+  .logos { padding: 76px 0 72px; }
+  .logos .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 28px; }
+  .logos img { height: 24px; width: auto; filter: grayscale(1); opacity: .55; }
+  .logos .tall { height: 34px; }
+  .logos .gov { height: 44px; filter: none; opacity: .85; }
+  .logos .word { font: 500 15px/1.1 var(--slab); color: #8a8a8a; display: flex; align-items: center; gap: 8px; }
+  .logos .word img { height: 26px; }
 
-				<!-- Menu 
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="ldt.html">Stanford Projects</a></li>
-							<li><a href="generic.html">Other Projects</a></li>
-							<li><a href="elements.html">Blog</a></li>
-						</ul>
-						<ul class="actions vertical">
-							<li><a href="#" class="button special fit">See more</a></li>
-						</ul>	`
-					</nav> -->
--->
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hello. Hola. 👋</h1>
-							</header>
-							<div class="content">
-								<p>Edtech entrepreneur, policy maker, developer. You can also talk to me about history, China, long-distance bicycle tours, or building a house in Patagonia.<br /> <br />
-								Emprendedor edtech, gobierno, programación. Conversemos de historia, mi tiempo en China, ciclismo de larga distancia, o sobre cómo construir una casa en el sur de Chile.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">See more</a></li><br/> <br/> 
-									<li><a href="https://www.linkedin.com/in/diegosalva/" class="button">LinkedIn</a></li><br/> <br/> 
-								</ul>
-							</div>
-						</div>
-					</section>
+  /* highlight squares */
+  .highlights { padding: 70px 0 0; }
+  .squares { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .sq b { overflow-wrap: break-word; }
+  .sq { min-height: 220px; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: #fff; transition: transform .2s ease; }
+  .sq:hover { transform: translateY(-4px); }
+  .sq .mark { min-height: 30px; display: flex; align-items: flex-start; }
+  .sq .mark img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+  .sq .mark img.keep { filter: none; height: 46px; }
+  .sq .mark { gap: 10px; align-items: center; }
+  .sq .mark img.keep-white { filter: none; height: 22px; }
+  .sq .mark img.seal { height: 46px; }
+  .sq .mark .divider { width: 1px; height: 30px; background: currentColor; opacity: .5; }
+  .sq .mark img.ghost { filter: none; height: 34px; border-radius: 8px; }
+  .sq .wm { display: flex; align-items: center; gap: 8px; font: 500 15px/1 var(--slab); }
+  .sq .wm img { height: 24px; filter: brightness(0) invert(1); }
+  .sq .wm.cn { font-size: 17px; gap: 10px; }
+  .sq .wm.cn span { font-size: 24px; font-weight: 600; }
+  .sq .badge { font: 600 13px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid currentColor; border-radius: 999px; padding: 7px 12px; }
+  .sq b { display: block; font: 500 clamp(19px, 1.7vw, 23px)/1.22 var(--slab); }
+  .sq small { display: block; font-size: 14px; opacity: .85; margin-top: 10px; line-height: 1.4; }
+  .s-navy { background: var(--navy); } .s-blue { background: #1d7fd6; } .s-teal { background: var(--teal); } .s-sky { background: var(--sky); }
+  .s-yellow { background: var(--yellow); color: var(--navy); } .s-white { background: #fff; color: var(--navy); box-shadow: inset 0 0 0 1.5px var(--line); }
+  .s-red { background: var(--red); }
 
-				<!-- Main -->
-					<div id="main">
+  /* chapters */
+  .chapter { padding: 130px 0 0; }
+  .chapter-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-bottom: 2px solid var(--navy); padding-bottom: 18px; }
+  .chapter-head h2 { font: 600 clamp(52px, 8vw, 112px)/.95 var(--sans); letter-spacing: -.04em; color: var(--navy); margin: 0; }
+  .chapter-head p { margin: 0; color: var(--muted); font-size: 17px; max-width: 34ch; text-align: right; }
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="react.html" class="link">Coding ⚛️</a></h3>
-										<p>Projects and apps I've built</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://www.figma.com/file/MPvnIACrVxPBfVcSz6MtKs/Portfolio?node-id=2%3A5926" class="link">Design 🎨</a></h3>
-										<p>Design portfolio on Figma: logos, web apps, dapps, and more</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://floodedforest.substack.com/" class="link">Flooded Forest 🌄</a></h3>
-										<p>Substack about building a house in the woods in Patagonia</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="mineduc.html" class="link">Education in Chile 🏫</a></h3>
-										<p>Ministry Innovation Center</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://medium.com/@diegosalva.ds" class="link">Medium ✍</a></h3>
-										<p>Short stories and writings on web3 and UX</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="ldt.html" class="link">Stanford Portfolio 🌲</a></h3>
-										<p>Projects in Learning, Design, & Technology</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="http://www.laputaproject.com/2645.html" class="link">Impulsa 智行学社 🚀</a></h3>
-										<p>Soft skills and social innovation curriculum in English and Chinese</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://diegosalvatierra.wordpress.com/" class="link">Other writings 📖</a></h3>
-										<p>Articles on Chilean education policy, China, and published writings</p>
-									</header>
-								</article>
-							</section>
+  .case { padding-top: 88px; }
+  .case h3.title, .band h3.title { font: 500 clamp(32px, 4.2vw, 54px)/1.06 var(--slab); color: var(--blue); letter-spacing: -.02em; margin: 0 0 14px; max-width: 22ch; }
+  .meta { font-size: 15px; color: var(--muted); margin: 0 0 36px; }
+  .meta b { color: var(--ink); font-weight: 500; }
+  .meta a { color: var(--blue); text-underline-offset: 3px; }
+  .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 64px; align-items: start; }
+  .split.even { grid-template-columns: 1fr 1fr; }
+  .prose p { margin: 0 0 18px; max-width: 58ch; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { font-weight: 500; }
+  .prose a { color: var(--blue); text-underline-offset: 3px; font-weight: 400; }
+  blockquote { margin: 28px 0 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--yellow); font: 400 21px/1.4 var(--slab); color: var(--navy); max-width: 30ch; }
+  blockquote cite { display: block; font: 300 14px/1.4 var(--sans); color: var(--muted); font-style: normal; margin-top: 8px; }
+  .split.mid { align-items: center; }
+  .prose h4 { font: 500 22px/1.25 var(--slab); color: var(--navy); margin: 0 0 10px; }
+  .shot { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); background: #fff; }
+  figcaption { font-size: 14px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+  .wide { margin-top: 56px; }
+  .tallcrop { max-height: 640px; }
+  .tallcrop img { object-fit: cover; object-position: top; }
 
-						<!-- Two 
-							<section id="two">
-								<div class="inner">								
-									<ul class="actions">
-										<li><a href="ldt.html" class="button next">Projects / Proyectos</a></li>
-									</ul>
-								</div>
-							</section>
+  .va-grid { display: grid; grid-template-columns: 0.75fr 0.6fr 2.2fr; gap: 24px; align-items: end; margin-top: 48px; }
 
-					</div> -->
+  .numbers { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 56px; border-top: 2px solid var(--navy); }
+  .numbers.two { grid-template-columns: repeat(2, 1fr); }
+  .patent { display: inline-block; margin: 4px 0 14px; padding: 9px 16px; border-radius: 999px; background: var(--navy); color: #fff; font: 600 14px/1 var(--sans); letter-spacing: .03em; }
+  .say-shots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 8px 0 40px; }
+  .say-shots img { border-radius: 16px; box-shadow: 0 20px 40px -20px rgba(11,45,92,.55); }
+  .say-text .prose { columns: 2; column-gap: 48px; }
+  .say-text .prose p { break-inside: avoid; max-width: none; }
+  .say-cap { margin: 24px 0 0; font-size: 13px; color: #dceeff; }
+  .row h4 a { color: inherit; text-decoration-color: var(--blue); text-underline-offset: 4px; }
+  .band.say figcaption, .band.say figcaption a { color: #dceeff; }
+  .ile-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 24px; margin-top: 48px; align-items: start; }
+  .pill.navy { background: var(--navy); color: #fff; margin-top: 18px; }
+  .pill.ghostnavy { background: transparent; color: var(--navy); box-shadow: inset 0 0 0 2px var(--navy); margin-top: 18px; }
+  .numbers div { padding: 20px 24px 4px 0; }
+  .numbers div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+  .numbers b { display: block; font: 500 clamp(32px, 3.8vw, 48px)/1 var(--slab); color: var(--navy); margin-bottom: 10px; }
+  .numbers span { font-size: 15px; color: var(--muted); line-height: 1.45; display: block; max-width: 30ch; }
 
-				<!-- Contact 
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>							
-							</section>
-						</div>
-					</section> -->
+  /* architecture diagram */
+  .arch { background: var(--ice); border-radius: 22px; padding: 36px; margin-top: 48px; }
+  .arch-grid { display: grid; grid-template-columns: 1.35fr auto 1fr; gap: 22px; align-items: stretch; }
+  .site { border: 2px solid var(--navy); border-radius: 16px; background: #fff; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .site .label { font: 500 15px/1.3 var(--sans); color: var(--navy); }
+  .site .label small { display: block; font-weight: 300; color: var(--muted); font-size: 13px; }
+  .site .chrome { height: 10px; border-radius: 6px; background: var(--line); width: 60%; }
+  .sandbox { border: 2px dashed var(--blue); border-radius: 12px; padding: 16px; background: #f4faff; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .sandbox b { font: 500 18px/1.25 var(--slab); color: var(--blue); }
+  .sandbox span { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .bridge { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; color: var(--navy); }
+  .bridge code { font: 500 15px/1 ui-monospace, Menlo, monospace; background: var(--yellow); padding: 10px 14px; border-radius: 10px; }
+  .bridge i { font-style: normal; font-size: 26px; color: var(--blue); line-height: 1; }
+  .services { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+  .services div { background: var(--navy); color: #fff; border-radius: 12px; padding: 14px 16px; font-size: 15px; }
+  .services div small { display: block; color: #b9cbe6; font-size: 13px; }
+  .pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 0; margin-top: 26px; font-size: 14px; color: var(--navy); }
+  .pipeline span { background: #fff; border: 1.5px solid var(--line); border-radius: 999px; padding: 7px 13px; }
+  .pipeline span + span { margin-left: 26px; position: relative; }
+  .pipeline span + span::before { content: "→"; position: absolute; left: -20px; color: var(--blue); }
+  .pipeline em { font-style: normal; font-weight: 500; margin-right: 14px; }
 
-				<!-- Footer 
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer> -->
+  .phones { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 36px; }
+  .phones figcaption { font-size: 13px; text-align: center; margin-top: 10px; }
+  .phones img { border-radius: 16px; box-shadow: var(--shadow); border: 1px solid var(--line); }
 
-			</div>
+  /* chat mock */
+  .chat { background: #f6f5f1; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .chat .you { align-self: flex-end; background: #fff; border: 1px solid #e4e1d8; border-radius: 16px 16px 4px 16px; padding: 12px 16px; font-size: 15px; max-width: 80%; }
+  .chat .tool { font: 400 13px/1.4 ui-monospace, Menlo, monospace; color: var(--muted); }
+  .chat .widget { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+  /* bands */
+  .band { border-radius: 26px; padding: 56px; margin-top: 88px; }
+  .band.snap { background: var(--yellow); color: #111; }
+  .band.snap h3.title { color: #111; }
+  .band.snap .meta, .band.snap .meta b { color: #333; }
+  .band.say { background: var(--blue); color: #fff; }
+  .band.say h3.title { color: var(--navy); }
+  .band.say .meta { color: #dceeff; } .band.say .meta b { color: #fff; } .band.say .meta a, .band.say .prose a { color: #fff; }
 
-	</body>
+  /* cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; margin-top: 64px; }
+  .card .img { aspect-ratio: 16 / 10; border-radius: 14px; overflow: hidden; background: var(--ice); box-shadow: var(--shadow); }
+  .card .img img { width: 100%; height: 100%; object-fit: cover; }
+  .card .img.contain img { object-fit: contain; background: #fff; }
+  .card h4 { font: 500 21px/1.25 var(--slab); color: var(--navy); margin: 20px 0 6px; }
+  .card p { margin: 0; font-size: 16px; color: #33445c; }
+  .card a { color: var(--blue); text-underline-offset: 3px; }
+
+  .rows { border-top: 2px solid var(--navy); margin-top: 72px; }
+  .row { display: grid; grid-template-columns: 150px minmax(0, 1.1fr) minmax(0, 2fr); gap: 28px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+  .row .when { color: var(--muted); font-size: 15px; padding-top: 3px; }
+  .row h4 { font: 500 20px/1.3 var(--slab); color: var(--navy); margin: 0; }
+  .row h4 small { display: block; font: 300 15px/1.4 var(--sans); color: var(--muted); margin-top: 4px; }
+  .row p { margin: 0; font-size: 16px; }
+  .row a { color: var(--blue); text-underline-offset: 3px; }
+  .clients { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 40px; margin-top: 14px; }
+  .clients img { height: 28px; width: auto; filter: grayscale(1); opacity: .55; }
+  .clients img.sqr { height: 40px; }
+
+  /* patagonia */
+  .house { background: var(--cream); margin-top: 130px; padding: 110px 0 120px; }
+  .house h2 { font: 600 clamp(52px, 8vw, 112px)/.95 var(--sans); letter-spacing: -.04em; color: var(--navy); margin: 0 0 28px; }
+  .gallery { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 250px 250px; gap: 16px; margin-top: 44px; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+  .gallery .a { grid-row: 1 / 3; }
+
+  /* about + footer */
+  .about { padding: 110px 0 120px; }
+  .about-grid { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 72px; align-items: center; }
+  .portrait { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; }
+  .side { display: block; margin-top: 28px; max-width: 520px; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+  .about h2 { font: 500 clamp(32px, 3.8vw, 48px)/1.1 var(--slab); color: var(--blue); margin: 0 0 18px; }
+  footer { background: var(--sky); color: #fff; padding: 110px 0 70px; text-align: center; }
+  footer .big { font: 600 clamp(44px, 7vw, 96px)/1 var(--sans); letter-spacing: -.035em; margin: 0 0 22px; }
+  footer .big span { color: var(--navy); }
+  footer .links { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; margin-top: 48px; font-size: 15px; }
+  footer .links a { color: #fff; text-underline-offset: 4px; }
+  .also { padding: 110px 0 0; }
+  .also h3 { font: 600 clamp(36px, 5vw, 64px)/1 var(--sans); letter-spacing: -.035em; color: var(--navy); margin: 0; }
+  .also .rows { margin-top: 24px; }
+  .side { display: block; margin-top: 16px; max-width: 420px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+  footer .sub { margin: 0 0 30px; font-size: 18px; }
+  footer .mail { font: 400 20px/1 var(--slab); color: #fff; display: inline-block; margin-top: 22px; text-underline-offset: 5px; }
+
+  @media (max-width: 980px) {
+    .squares { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .split, .split.even { grid-template-columns: 1fr; gap: 36px; }
+    .va-grid { grid-template-columns: 1fr 1fr; }
+    .va-grid .wide-cell { grid-column: 1 / 3; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-portrait { width: 160px; height: 160px; order: -1; }
+    .phones { scroll-snap-type: x mandatory; -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); }
+    .phones figure { scroll-snap-align: start; }
+    .logos .wrap { display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; }
+    .logos .word { grid-column: span 2; }
+    .arch-grid { grid-template-columns: 1fr; }
+    .bridge { flex-direction: row; }
+    .bridge i { transform: rotate(90deg); }
+    .phones { grid-template-columns: repeat(6, 150px); overflow-x: auto; padding-bottom: 12px; }
+    .cards { grid-template-columns: 1fr; }
+    .ile-grid { grid-template-columns: 1fr; }
+    .say-shots { grid-template-columns: repeat(5, 160px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+    .say-shots img { scroll-snap-align: start; }
+    .say-text .prose { columns: 1; }
+    .numbers { grid-template-columns: 1fr; }
+    .numbers div + div { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+    .row { grid-template-columns: 1fr; gap: 6px; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 180px; }
+    .gallery .a { grid-column: 1 / 3; grid-row: auto; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .portrait { width: 200px; height: 200px; }
+    .band { padding: 28px; border-radius: 20px; }
+    .arch { padding: 20px; }
+    .chapter-head p { text-align: left; }
+    .nav ul li.hide-sm { display: none; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 18px; }
+    .nav ul { display: none; }
+    .squares { grid-template-columns: 1fr; }
+    .sq { min-height: 0; gap: 28px; }
+    .logos img { height: 20px; } .logos .tall { height: 28px; } .logos .gov { height: 38px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="logo" href="#">Diego Salvatierra</a>
+      <ul>
+        <li><a href="#california">California</a></li>
+        <li class="hide-sm"><a href="#chile">Chile</a></li>
+        <li class="hide-sm"><a href="#china">China</a></li>
+        <li class="hide-sm"><a href="#patagonia">Patagonia</a></li>
+        <li><a class="navpill" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="words" aria-label="Edtech, AI, California, Chile, China, Policy, Learning, Product"><span>Edtech.</span> <span>AI.</span> <span>California.</span> <span>Chile.</span> <span>China.</span> <span>Policy.</span> <span>Learning.</span> <span>Product.</span></h1>
+        <p class="lede">I'm a Senior PM for AI at Common Sense Media in San Francisco, building for 30 million families and 1.4 million teachers. Before that I redesigned Chile's US$200M school Internet tender and founded an AI language learning app.</p>
+        <div class="actions">
+          <a class="pill" href="#highlights">My work</a>
+          <a class="pill ghost" href="https://www.linkedin.com/in/diegosalva/">LinkedIn</a>
+        </div>
+      </div>
+      <img class="hero-portrait" src="images/work/diego.jpg" alt="Diego Salvatierra" />
+    </div>
+  </div>
+</header>
+
+<section class="logos" aria-label="Where I've worked and studied">
+  <div class="wrap">
+    <img src="images/work/logos/csm.svg" alt="Common Sense Media" class="tall" />
+    <span class="snapmark"><img src="images/work/logos/snapghost.svg" alt="" class="ghost" /><img src="images/work/logos/snap.svg" alt="Snap Inc." /></span>
+    <img src="images/work/logos/mineduc.svg" alt="Ministerio de Educación, Gobierno de Chile" class="gov" />
+    <img src="images/work/logos/mck.svg" alt="McKinsey & Company" />
+    <span class="word"><img src="images/work/logos/spc-mark.svg" alt="" />South Park Commons</span>
+    <img src="images/work/logos/stanford.svg" alt="Stanford" />
+    <img src="images/work/logos/yale.svg" alt="Yale" />
+  </div>
+</section>
+
+<section class="highlights" id="highlights">
+  <div class="wrap">
+    <div class="squares">
+      <a class="sq s-navy" href="#analyzer">
+        <div class="mark"><img src="images/work/logos/csm.svg" alt="Common Sense Media" /></div>
+        <div><b>Invented a patent-pending AI that rates any YouTube video for kids</b><small>Live in an app with 300,000 users</small></div>
+      </a>
+      <a class="sq s-blue" href="#fastfeatures">
+        <div class="mark"><img src="images/work/logos/csm.svg" alt="Common Sense Media" /></div>
+        <div><b>Designed how AI-built apps ship safely inside our legacy site</b><small>Fast Features, with sign-in built in</small></div>
+      </a>
+      <a class="sq s-white" href="#conectividad">
+        <div class="mark"><img src="images/work/logos/mineduc.svg" alt="Ministerio de Educación" class="keep" /></div>
+        <div><b>Redesigned Chile's US$200M school Internet tender</b><small>9,000 schools online in three months</small></div>
+      </a>
+      <a class="sq s-red" href="#testimony">
+        <div class="mark"><img src="images/work/logos/camara.svg" alt="Cámara de Diputadas y Diputados de Chile" class="seal" /><span class="divider"></span><img src="images/work/logos/csm.svg" alt="Common Sense Media" /></div>
+        <div><b>Helped write AI chatbot limits for kids into a Chilean bill</b><small>The first proposed in Latin America. Testified as a Common Sense Media expert, 2026</small></div>
+      </a>
+      <a class="sq s-sky" href="#say">
+        <div class="mark"><span class="wm"><img src="images/work/logos/spc-mark.svg" alt="" />South Park Commons</span></div>
+        <div><b>Founded Say, an AI speaking app, and doubled retention</b><small>Built at South Park Commons, 2022 to 2024</small></div>
+      </a>
+      <a class="sq s-teal" href="#mcp">
+        <div class="mark"><img src="images/work/logos/codeai.svg" alt="CodeAI" class="keep-white" /></div>
+        <div><b>Won a hackathon with an MCP server that puts live lessons in Claude</b><small>CodeAI edtech hackathon, 2026</small></div>
+      </a>
+      <a class="sq s-yellow" href="#snap">
+        <div class="mark"><img src="images/work/logos/snapghost.svg" alt="" class="ghost" /><img src="images/work/logos/snap.svg" alt="Snap Inc." style="filter:none" /></div>
+        <div><b>Taught Snap's engineering academy and AR developer courses</b><small>Los Angeles, 2022 to 2024</small></div>
+      </a>
+      <a class="sq s-navy" href="#china">
+        <div class="mark"><span class="wm cn"><span lang="zh">雅礼</span>Yale-China</span></div>
+        <div><b>Taught 10th grade English to high schoolers in Hunan</b><small>Yale-China fellow at Yali Middle School, 2015 to 2017</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ===================== CALIFORNIA ===================== -->
+  <section class="chapter" id="california">
+    <div class="wrap">
+      <div class="chapter-head">
+        <h2>California</h2>
+        <p>AI products, a startup and a big tech classroom. San Francisco and Los Angeles, 2021 to now.</p>
+      </div>
+
+      <!-- Analyzer -->
+      <article class="case" id="analyzer">
+        <h3 class="title">A parent guide for any YouTube video, in minutes</h3>
+        <p class="patent">Patent pending · USPTO 63/929,523</p>
+        <p class="meta"><b>Common Sense Media</b> · 2025 to now · Inventor and product lead</p>
+        <div class="split">
+          <div class="prose">
+            <p>YouTube and TikTok now take more than half of young kids' viewing time, far more than any team of editors can review. I invented a multimodal engine that reads a video's frames, audio and transcript against 20 years of Common Sense rubrics, then returns a parent guide with every concern timestamped.</p>
+            <p>It has gone live in the Common Sense Media app, which has 300,000 users, and I refined it through rounds of parent feedback.</p>
+            <blockquote>"I just can't trust YouTube to have the same mind I do as a parent."<cite>Parent in our user research</cite></blockquote>
+          </div>
+          <figure><div class="shot"><img src="images/work/va2-search.jpg" alt="Parents' Guide to YouTube: search any video or creator, an explainer on overstimulation, and trending videos with age ratings and findings." /></div><figcaption>The next version, in design: paste any YouTube link, get an age rating and what we found.</figcaption></figure>
+        </div>
+        <div class="va-grid">
+          <figure><div class="shot"><img src="images/work/va-app.jpg" alt="The MrBeast analysis featured in the Common Sense Media app feed." /></div><figcaption>Live in the app today.</figcaption></figure>
+          <figure><div class="shot"><img src="images/work/va2-mobile.jpg" alt="Mobile review: target audience age 10+, a selector for your own kid's age, and findings by category with intensity bars." /></div><figcaption>Guidance adapts to your own kid's age.</figcaption></figure>
+          <figure class="wide-cell"><div class="shot"><img src="images/work/va2-research.jpg" alt="High stimulation videos like Cocomelon next to low stimulation videos like Bluey, each with a chart of frame-to-frame flicker." /></div><figcaption>Attention capture: Cocomelon's frames change far faster than Bluey's.</figcaption></figure>
+        </div>
+        <div class="prose wide">
+          <h4>Productized cutting-edge academic research on overstimulation for kids</h4>
+          <p>Some of the most-watched kids' videos have nothing a content rubric would flag. I launched a partnership with UC Berkeley's Kidd Lab to turn their research on flicker, the brightness change between frames they link to overstimulation, into a parent-facing product.</p>
+        </div>
+        <div class="numbers two">
+          <div><b>30 million</b><span>Families Common Sense reaches</span></div>
+          <div><b>300,000</b><span>Users of the app where the analyzer runs</span></div>
+        </div>
+      </article>
+
+      <!-- Fast Features -->
+      <article class="case" id="fastfeatures">
+        <h3 class="title">Fast Features: AI-built apps, shipped safely inside a legacy site</h3>
+        <p class="meta"><b>Common Sense Media</b> · 2026 · Architecture and product lead · <a href="https://www.commonsensemedia.org/first-phone-readiness">See one live</a></p>
+        <div class="split">
+          <div class="prose">
+            <p>AI can draft an interactive app in minutes. Getting it onto a large Drupal site with tens of millions of users used to take a full weeks-long release cycle.</p>
+            <p>I designed Fast Features to close that gap. Each app runs sandboxed in its own frame and talks to the site through one small API for sign-in, saved data and outside services. Engineers and product managers can ship an app without a Drupal release.</p>
+          </div>
+          <div class="prose">
+            <p>On top of it sits Puglet Studio, which turns a parent guide into a quiz, video, checklist or chat. Editors fix copy in Google Docs, it syncs back, Claude checks it against house rules, and it ships as a pull request.</p>
+            <p>Quizzes, videos, chat simulations and planners now ship this way, without waiting on a platform release.</p>
+          </div>
+        </div>
+
+        <div class="arch" aria-label="Fast Features architecture">
+          <div class="arch-grid">
+            <div class="site">
+              <div class="label">commonsensemedia.org<small>Legacy Drupal site, 20 million visits a year</small></div>
+              <div class="chrome"></div>
+              <div class="sandbox"><b>Fast Feature</b><span>AI-generated app, sandboxed in its own frame. Plain web code, no platform access.</span></div>
+            </div>
+            <div class="bridge"><i>⇄</i><code>window.ff</code><i>⇄</i></div>
+            <div class="services">
+              <div>Sign-in<small>The user's existing session</small></div>
+              <div>Records and state<small>Saved per user and per placement</small></div>
+              <div>Outside APIs<small>Called server-side, keys never exposed</small></div>
+            </div>
+          </div>
+          <div class="pipeline"><em>Puglet Studio</em><span>Parent guide</span><span>AI draft</span><span>Copy deck in Google Docs</span><span>House-rule check</span><span>Pull request</span><span>Published</span></div>
+        </div>
+
+        <div class="phones">
+          <figure><img src="images/work/fp-cover.jpg" alt="First Phones: is your kid ready for their first smartphone?" /><figcaption>First Phones readiness check</figcaption></figure>
+          <figure><img src="images/work/fp-chat.jpg" alt="Text-back simulation: reply to your kid's texts." /><figcaption>Practice texting your kid</figcaption></figure>
+          <figure><img src="images/work/ff-radesky.jpg" alt="What a pediatrician wants you to know about AI, a video with Dr. Jenny Radesky." /><figcaption>A pediatrician on AI</figcaption></figure>
+          <figure><img src="images/work/ff-radesky-video.jpg" alt="Captioned video with chapter chips." /><figcaption>Video with chapters</figcaption></figure>
+          <figure><img src="images/work/ff-twotruths.jpg" alt="Two Truths and AI: spot which movie posters were made by AI." /><figcaption>Spot the AI poster</figcaption></figure>
+          <figure><img src="images/work/ff-planner.jpg" alt="Family Tech Planner: choose your kid's age group." /><figcaption>Family Tech Planner</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- Say -->
+      <section class="band say" id="say">
+        <h3 class="title">Say: a Scratch for language learning</h3>
+        <p class="meta"><b>Founder and CEO</b> · 2022 to 2024 · Still live at <a href="https://getsay.app/">getsay.app</a></p>
+        <div class="say-shots">
+          <img src="images/work/say-1.jpg" alt="Complete daily challenges to keep your streak: home screen in Chinese with streak and daily challenges." />
+          <img src="images/work/say-2.jpg" alt="Chat with the Buddy, your AI tutor: a German conversation with suggested replies." />
+          <img src="images/work/say-3.jpg" alt="Get instant pronunciation feedback: a Korean sentence scored word by word." />
+          <img src="images/work/say-4.jpg" alt="Save phrases for when you need them: the phrasebook, grouped by topic." />
+          <img src="images/work/say-5.jpg" alt="Confused? The Buddy explains: a French reply broken down word by word." />
+        </div>
+        <div class="say-text">
+          <div class="prose">
+            <p>Say brings constructionist learning, the idea behind MIT's Scratch, to languages. You pick the words you want, build your own sentences, and use them in conversation with an AI Buddy.</p>
+            <p>In 2022, months before OpenAI offered a speech API, I ran Whisper on our own Google Cloud servers to score pronunciation word by word. I wrote most of the code, raised an angel round and led five contractors. Cohort analysis showed where learners dropped off; daily challenges and push notifications <strong>doubled retention</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MCP / hackathon -->
+      <article class="case" id="mcp">
+        <h3 class="title">An MCP server that puts live lessons inside Claude</h3>
+        <p class="meta"><b>Winner, CodeAI edtech hackathon</b> · 2026 · Team of six · <a href="https://interactive-learning-experiences-eta.vercel.app/">Try the app</a></p>
+        <div class="split">
+          <div class="prose">
+            <p>Our product reads real academic standards from the Learning Commons knowledge graph over MCP, then builds lessons out of hands-on widgets.</p>
+            <p>Why we won: an MCP server of our own, built with MCP Apps. A teacher asks Claude for an activity and a live functional widget renders right in the chat, scoring what a student types against the real standard.</p>
+            <p>Our key innovation was MCP UIs within Claude and ChatGPT for these interactive activities, which themselves take in the Learning Commons MCP.</p>
+          </div>
+          <div class="chat" aria-label="How a widget appears in a chat">
+            <div class="you">Make me a draft meter for RH.6-8.1</div>
+            <div class="tool">show_widget(standard: "RH.6-8.1", kind: "draft-meter")</div>
+            <div class="widget"><img src="images/work/ile-draft.jpg" alt="Draft Meter widget scoring a student's answer as strong." /></div>
+          </div>
+        </div>
+        <div class="ile-grid">
+          <figure><div class="shot"><img src="images/work/ile-builder.jpg" alt="Pathway builder: type a topic and grade, then build a pathway." /></div><figcaption>Type a topic, pick a grade.</figcaption></figure>
+          <figure><div class="shot"><img src="images/work/ile-steps.jpg" alt="A generated practice step: put the steps for comparing fractions in order." /></div><figcaption>A generated practice step.</figcaption></figure>
+          <figure><div class="shot"><img src="images/work/ile-curve.jpg" alt="Draw the Curve: the student's guess under the real story arc." /></div><figcaption>Draw the Curve: guess, then see the real arc.</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- Snap -->
+      <section class="band snap" id="snap">
+        <div class="split">
+          <div>
+            <h3 class="title">Teaching at Snap</h3>
+            <p class="meta"><b>Snap Inc.</b> · Los Angeles · 2022 to 2024</p>
+            <div class="prose">
+              <p>I co-designed and taught the Snap Engineering Academy, Snap's full-stack program at its LA headquarters that helps underrepresented developers break into tech.</p>
+              <p>I also built Lens Studio courses on augmented reality for Snap's developer community.</p>
+            </div>
+          </div>
+          <figure class="shot"><img src="images/work/snap-lens.jpg" alt="Lens Studio 5.0 course page on Snap AR." /></figure>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ===================== CHILE ===================== -->
+  <section class="chapter" id="chile">
+    <div class="wrap">
+      <div class="chapter-head">
+        <h2>Chile</h2>
+        <p>Innovation lead at the Ministry of Education, 2018 to 2021, and AI safety advocacy today.</p>
+      </div>
+
+      <article class="case" id="conectividad">
+        <h3 class="title">Connecting schools no one could connect</h3>
+        <p class="meta"><b>Ministerio de Educación</b> · Conectividad para la Educación 2030 · US$200M · Co-founded the innovation center and led a four-person team</p>
+        <div class="split mid">
+          <div class="prose">
+            <p>For ten years, government tenders had failed to bring Internet to Chile's most remote schools. Carriers bid on the easy ones and skipped the rest. I redesigned the tender to bundle large urban schools with rural ones in the same contracts, so winning the easy schools meant connecting the hard ones too.</p>
+            <p>Working with carriers, school districts and the Telecommunications Ministry, we activated 9,000 schools in three months and reached <strong>95% of public schools</strong>.</p>
+          </div>
+          <figure class="shot"><img src="images/work/mineduc-antenna.jpg" alt="A cell antenna on a hill at dusk in rural Chile." /></figure>
+        </div>
+      </article>
+
+      <article class="case" id="testimony">
+        <h3 class="title">AI chatbot limits for kids, proposed in Chile's Congress</h3>
+        <p class="meta"><b>Chilean Chamber of Deputies</b> · 2026 · Expert testimony for Common Sense Media · Bill 18246-18, vote expected 2027</p>
+        <div class="split mid">
+          <figure class="shot"><img src="images/work/testimony.jpg" alt="Diego testifying over video to a committee of Chile's Chamber of Deputies." /></figure>
+          <div class="prose">
+            <p>I testified to the Chamber's science and technology committee and, with Common Sense Media's advocacy team, helped write limits on AI chatbots for minors into Bill 18246-18. I collaborated directly with Chilean Congressman Schalper on the bill, impacting 4 million kids in Chile.</p>
+            <p>If it passes, they will be the first such rules in Latin America, and four more countries are already debating similar bills.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="cards">
+        <div class="card">
+          <div class="img contain"><img src="images/work/mineduc-google.jpg" alt="Poster for the Ministry's free Google for Education teacher workshops." /></div>
+          <h4>Remote teaching during COVID</h4>
+          <p>Trained tens of thousands of teachers in remote teaching on a shoestring budget, the Ministry's most popular online offering ever.</p>
+        </div>
+        <div class="card">
+          <div class="img"><img src="images/work/mineduc-offline.jpg" alt="A small offline content server next to a laptop." /></div>
+          <h4>Offline Internet for rural areas</h4>
+          <p>For rural schools with no connection, devices carrying Khan Academy, PhET and a digital library.</p>
+        </div>
+        <div class="card">
+          <div class="img contain"><img src="images/viajeUsuarioABP.jpg" alt="User journey of a school director adopting project-based learning." /></div>
+          <h4>Project-based learning program</h4>
+          <p>Created a national program that helps teachers design project-based learning. <a href="mineduc.html">More from the Ministry</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CHINA ===================== -->
+  <section class="chapter" id="china">
+    <div class="wrap">
+      <div class="chapter-head">
+        <h2>China</h2>
+        <p>Yale-China teaching fellow in Changsha, Hunan, 2015 to 2017.</p>
+      </div>
+      <div class="split mid wide">
+        <div class="prose">
+          <h4>Two years at Yali Middle School</h4>
+          <p>I taught English and public policy to high schoolers at one of Hunan's top public schools. It's where I learned Mandarin and decided to work in education.</p>
+        </div>
+        <figure class="shot"><img src="images/work/yali-class.jpg" alt="Diego with his students at Yali Middle School in Changsha." /></figure>
+      </div>
+      <div class="split mid wide">
+        <figure class="shot"><img src="images/work/p8.jpg" alt="Broad Town in Changsha: the P8 building next to the smiling pyramid." /></figure>
+        <div class="prose">
+          <h4>Academia Impulsa 智行学社</h4>
+          <p>I founded a summer academy for 120 high school students from rural Hunan, held at Broad Town's P8 building in Changsha. Students learned soft skills and social innovation, taught in English and Chinese.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ALSO ===================== -->
+  <section class="also">
+    <div class="wrap">
+      <h3>Also</h3>
+      <div class="rows">
+        <div class="row">
+          <div class="when">2022 to 2024</div>
+          <h4><a href="https://impulsaeducation.co/">Impulsa</a><small>My edtech consulting studio</small></h4>
+          <div>
+            <p>Built an AI chatbot that helps parents choose schools for Tether, and mentored UX students on Harness Projects' career course.</p>
+            <div class="clients" aria-label="Impulsa clients">
+              <img src="images/work/logos/tethered.png" alt="TetherEd" />
+              <img src="images/work/logos/harness.png" alt="Harness Projects" />
+              <img src="images/work/logos/kaixr.png" alt="KaiXR" />
+              <img src="images/work/logos/pathstream.png" alt="Pathstream" class="sqr" />
+              <img src="images/work/logos/nextshift.png" alt="Next Shift Learning" class="sqr" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">2021 to 2023</div>
+          <h4>South Park Commons<small>Member</small></h4>
+          <p>Prototyped Say. Won a web3 hackathon with geo-located NFTs.</p>
+        </div>
+        <div class="row">
+          <div class="when">2017 to 2018</div>
+          <h4>Stanford<small>M.A. Learning, Design and Technology</small></h4>
+          <p>Built Peloton, a teamwork tool for classrooms. <a href="ldt.html">Portfolio</a></p>
+        </div>
+        <div class="row">
+          <div class="when">2013 to 2014</div>
+          <h4>McKinsey<small>Business analyst, Santiago</small></h4>
+          <p>Strategy for logistics and retail companies. Before that, a B.A. at Yale, magna cum laude.</p>
+        </div>
+        <div class="row">
+          <div class="when">Weekends</div>
+          <h4>deslop.pro<small>A side project</small></h4>
+          <div>
+            <p>Strips AI filler from slide decks and docs, right in the browser. <a href="https://www.deslop.pro/">Try it!</a></p>
+            <a class="side" href="https://www.deslop.pro/"><img src="images/work/deslop.jpg" alt="deslop.pro: flagged AI filler phrases on a sample slide and memo." /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PATAGONIA ===================== -->
+  <section class="house" id="patagonia">
+    <div class="wrap">
+      <h2>And a house in Patagonia</h2>
+      <div class="split even">
+        <div class="prose">
+          <p>I designed and built a house in a forest in northern Patagonia, on a river. Check out my Substack on building it.</p>
+          <a class="pill navy" href="https://floodedforest.substack.com/">Read Flooded Forest</a>
+        </div>
+        <div class="prose">
+          <p>It's now an AirBnB rental for remote work, with Starlink.</p>
+          <a class="pill ghostnavy" href="https://www.airbnb.com/rooms/805905265578206320">See the listing</a>
+        </div>
+      </div>
+      <div class="gallery">
+        <img class="a" src="images/work/house-finished.jpg" alt="The finished house: glass and wood among the trees." />
+        <img src="images/work/house-kitchen.jpg" alt="Kitchen with green cabinets and a wood counter." style="object-position: 50% 40%" />
+        <img src="images/work/house-river.jpg" alt="The river by the house at dusk." />
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="big">Say <span>hola.</span></p>
+    <p class="sub">I speak Spanish, English, Italian and conversational Mandarin.</p>
+    <a class="pill" href="mailto:diegosalva.ds@gmail.com">diegosalva.ds@gmail.com</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/diegosalva/">LinkedIn</a>
+      <a href="https://github.com/diego-salvatierra">GitHub</a>
+      <a href="https://floodedforest.substack.com/">Flooded Forest</a>
+      <a href="https://medium.com/@diegosalva.ds">Medium</a>
+      <a href="react.html">Older code projects</a>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
