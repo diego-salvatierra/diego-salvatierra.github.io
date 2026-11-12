@@ -44,6 +44,17 @@
   .nav ul a.navpill { background: var(--yellow); color: var(--navy); font-weight: 600; padding: 9px 16px; border-radius: 999px; }
   .nav ul a.navpill:hover { text-decoration: none; }
   .nav ul { align-items: center; }
+  .ventures details { position: relative; }
+  .ventures summary { list-style: none; cursor: pointer; color: #fff; font-size: 15px; display: flex; align-items: center; gap: 6px; }
+  .ventures summary::-webkit-details-marker { display: none; }
+  .ventures summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+  .ventures details[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+  .ventures summary:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 4px; }
+  .ventures .menu { position: absolute; right: -12px; top: calc(100% + 14px); z-index: 50; width: 260px; background: #fff; border-radius: 14px; padding: 8px; box-shadow: 0 18px 40px -12px rgba(11,45,92,.45); }
+  .nav ul .ventures .menu a { display: block; color: var(--navy); padding: 10px 12px; border-radius: 10px; text-decoration: none; }
+  .nav ul .ventures .menu a:hover { background: var(--ice); text-decoration: none; }
+  .ventures .menu b { display: block; font: 500 16px/1.3 var(--slab); }
+  .ventures .menu span { display: block; font-size: 13px; color: var(--muted); }
   .logos .snapmark { display: flex; align-items: center; gap: 8px; }
   .logos .snapmark .ghost { height: 22px; opacity: .45; border-radius: 5px; }
   .hero { background: var(--blue); color: var(--navy); padding-bottom: 80px; }
@@ -262,9 +273,14 @@
   }
   @media (max-width: 520px) {
     .wrap { padding: 0 18px; }
-    .nav ul li:not(:last-child) { display: none; }
+    .nav ul li:not(:last-child):not(.ventures) { display: none; }
+    .nav ul { gap: 18px; }
+    .ventures .menu { right: -90px; }
     .nav { padding: 20px 0; }
-    .logo { font-size: 22px; }
+    .logo { font-size: 19px; white-space: nowrap; }
+    .nav ul { gap: 14px; }
+    .nav ul a.navpill { padding: 8px 13px; font-size: 14px; }
+    .ventures summary { font-size: 14px; }
     .hero { padding-bottom: 48px; }
     .hero h1.words { font-size: 40px; }
     .hero .lede { font-size: 17px; }
@@ -298,6 +314,16 @@
         <li class="hide-sm"><a href="#chile">Chile</a></li>
         <li class="hide-sm"><a href="#china">China</a></li>
         <li class="hide-sm"><a href="#patagonia">Patagonia</a></li>
+        <li class="ventures">
+          <details>
+            <summary>Ventures</summary>
+            <div class="menu">
+              <a href="https://getsay.app/"><b>Say</b><span>AI language app</span></a>
+              <a href="https://impulsaeducation.co/"><b>Impulsa</b><span>Edtech consulting studio</span></a>
+              <a href="https://www.deslop.pro/"><b>deslop.pro</b><span>Cut AI filler from decks and docs</span></a>
+            </div>
+          </details>
+        </li>
         <li><a class="navpill" href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -667,5 +693,9 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('click', e => { document.querySelectorAll('.ventures details[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; }); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.ventures details[open]').forEach(d => d.open = false); });
+</script>
 </body>
 </html>
